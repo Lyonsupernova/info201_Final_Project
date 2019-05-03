@@ -27,49 +27,49 @@ https://www.kaggle.com/lsaa2014/eda-of-ames-house-prices
 -------------
 ### Finding Data
 1.Median Household Income Data
->*Where did you download the data (e.g., a web URL)?*
-- https://data.world/zillow-data/median-household-income
+- *Where did you download the data (e.g., a web URL)?*
+> https://data.world/zillow-data/median-household-income
 >
->*How was the data collected or generated? Make sure to explain who collected the data (not necessarily the same people that host the data), and who or what the data is about?*
-- Zillow is in the process of transitioning some data sources with the goal of producing published data. Zillow receives information about property sales from the municipal office responsible for recording real estate transactions in different area. The information Zillow provide is public information, gathered from county records. The data is about the household affordability which Zillow uses its own index to estimate the affordability index.
+- *How was the data collected or generated? Make sure to explain who collected the data (not necessarily the same people that host the data), and who or what the data is about?*
+> Zillow is in the process of transitioning some data sources with the goal of producing published data. Zillow receives information about property sales from the municipal office responsible for recording real estate transactions in different area. The information Zillow provide is public information, gathered from county records. The data is about the household affordability which Zillow uses its own index to estimate the affordability index.
 >
->*How many observations (rows) are in your data?*
-- 917
+- *How many observations (rows) are in your data?*
+> 917
 >
->*How many features (columns) are in the data?*
-- 157
+- *How many features (columns) are in the data?*
+>  157
 >
->*What questions (from above) can be answered using the data in this dataset?*
-- The affordability estimated by Zillow's affordability index indicates the income level of householder. This datasets vary regionally which is helpful to answer the second question.
+- *What questions (from above) can be answered using the data in this dataset?*
+> The affordability estimated by Zillow's affordability index indicates the income level of householder. This datasets vary regionally which is helpful to answer the second question.
 
 2.Washington State HDMA Data
->*Where did you download the data (e.g., a web URL)?*
-- https://www.kaggle.com/miker400/washington-state-home-mortgage-hdma2016/version/1
+- *Where did you download the data (e.g., a web URL)?*
+> https://www.kaggle.com/miker400/washington-state-home-mortgage-hdma2016/version/1
 >
->*How was the data collected or generated? Make sure to explain who collected the data (not necessarily the same people that host the data), and who or what the data is about?*
-- The Home Mortgage Disclosure Act (HMDA) requires many financial institutions to maintain, report, and publicly disclose information about mortgages. These public data are important because they help show whether lenders are serving the housing needs of their communities; they give public officials information that helps them make decisions and policies; and they shed light on lending patterns that could be discriminatory.
+- *How was the data collected or generated? Make sure to explain who collected the data (not necessarily the same people that host the data), and who or what the data is about?*
+> The Home Mortgage Disclosure Act (HMDA) requires many financial institutions to maintain, report, and publicly disclose information about mortgages. These public data are important because they help show whether lenders are serving the housing needs of their communities; they give public officials information that helps them make decisions and policies; and they shed light on lending patterns that could be discriminatory.
 >
->*How many observations (rows) are in your data?*
-- 466567
+- *How many observations (rows) are in your data?*
+> 466567
 >
->*How many features (columns) are in the data?*
-- 47
+- *How many features (columns) are in the data?*
+> 47
 >
->*What questions (from above) can be answered using the data in this dataset?*
-- The dataset provide variety of information about home loans such as demographic information, area specific data, loan status, property type, loan type, loan purpose and originating agency. According to those information we can analysis what is the race, age, income of the people who bought house in Washington state, which can answer question 1 from above
+- *What questions (from above) can be answered using the data in this dataset?*
+> The dataset provide variety of information about home loans such as demographic information, area specific data, loan status, property type, loan type, loan purpose and originating agency. According to those information we can analysis what is the race, age, income of the people who bought house in Washington state, which can answer question 1 from above
 
 3.House Sales in King County
->*Where did you download the data (e.g., a web URL)?*
-- https://www.kaggle.com/harlfoxem/housesalesprediction
+- *Where did you download the data (e.g., a web URL)?*
+> https://www.kaggle.com/harlfoxem/housesalesprediction
 >
->*How was the data collected or generated? Make sure to explain who collected the data (not necessarily the same people that host the data), and who or what the data is about?*
-- This datasets contains the house sale prices for King County between May 2014 to May 2015. It includes 19 house features as well as the price and id columns. It is generated by harlfoxem from public record.
+- *How was the data collected or generated? Make sure to explain who collected the data (not necessarily the same people that host the data), and who or what the data is about?*
+> This datasets contains the house sale prices for King County between May 2014 to May 2015. It includes 19 house features as well as the price and id columns. It is generated by harlfoxem from public record.
 >
->*How many observations (rows) are in your data?*
-- 21613
+- *How many observations (rows) are in your data?*
+> 21613
 >
->*How many features (columns) are in the data?*
-- 19
+- *How many features (columns) are in the data?*
+>  19
 >
->*What questions (from above) can be answered using the data in this dataset?*
-- The data answers question about how do numbers of bedrooms, sqft, build years etc. affect housing price in King county.
+- *What questions (from above) can be answered using the data in this dataset?*
+> The data answers question about how do numbers of bedrooms, sqft, build years etc. affect housing price in King county.
