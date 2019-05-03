@@ -15,7 +15,7 @@ https://www.kaggle.com/stephanedc/seattle-house-price-predictions/notebook
 
 >The second project is “US Housing Market Trends from Zillow Data”. The contributor used R to slice and dice the data provided by Zillow to better understand the trends of the housing market. And this project is aimed at finding the trend of sales and listing price to make better investment decision. https://rpubs.com/msmirabel/zillowdata
 
->The third project is  “EDA of Ames house prices.” The contributor try to use the dataset to evaluate the prices of a house by taking many factors into consideration. The question she/she tried to solve is the year that had the highest price house sold and  the factor that had the biggest impact on sale price.
+>The third project is  “EDA of Ames house prices.” The contributor used the dataset to evaluate the prices of a house by taking many factors into consideration. The question she/she tried to solve is the year that had the highest price house sold and  the factor that had the biggest impact on sale price.
 https://www.kaggle.com/lsaa2014/eda-of-ames-house-prices
 
 What data-driven questions do you hope to answer about this domain (share at least 3)?
