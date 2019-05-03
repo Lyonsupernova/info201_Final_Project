@@ -34,9 +34,12 @@ https://data.world/zillow-data/median-household-income
 
 >How was the data collected or generated? Make sure to explain who collected the data (not necessarily the same people that host the data), and who or what the data is about?
 
-- Zillow is in the process of transitioning some data sources with the goal of producing published data. Zillow receives information about property sales from the municipal office responsible for recording real estate transactions in different area.
+- Zillow is in the process of transitioning some data sources with the goal of producing published data.
+
+- Zillow receives information about property sales from the municipal office responsible for recording real estate transactions in different area.
 
 - The information Zillow provide is public information, gathered from county records.
+
 - The data is about the household affordability which Zillow uses its own index to estimate the affordability index.
 
 >How many observations (rows) are in your data?
@@ -50,4 +53,5 @@ https://data.world/zillow-data/median-household-income
 >What questions (from above) can be answered using the data in this dataset?
 
 - The affordability estimated by Zillow's affordability index indicates the income level of householder.
+
 - This datasets vary regionally which iss helpful to answer the first question.
