@@ -24,7 +24,7 @@ https://www.kaggle.com/lsaa2014/eda-of-ames-house-prices
 >- How do crime rate, age, income level, race etc. affect housing in each area?
 >- How does the house price change over time?
 >- What the ratio between rental and selling in different area (near school, downtown, suburbs area)?
-
+-------------
 ### Finding Data
 1.Median Household Income Data
 >*Where did you download the data (e.g., a web URL)?*
