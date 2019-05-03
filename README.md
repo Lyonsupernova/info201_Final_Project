@@ -26,7 +26,7 @@ https://www.kaggle.com/lsaa2014/eda-of-ames-house-prices
 >- What the ratio between rental and selling in different area (near school, downtown, suburbs area)?
 -------------
 ### Finding Data
-1.Median Household Income Data
+#### 1.Median Household Income Data
 - *Where did you download the data (e.g., a web URL)?*
 > https://data.world/zillow-data/median-household-income
 >
@@ -42,7 +42,7 @@ https://www.kaggle.com/lsaa2014/eda-of-ames-house-prices
 - *What questions (from above) can be answered using the data in this dataset?*
 > The affordability estimated by Zillow's affordability index indicates the income level of householder. This datasets vary regionally which is helpful to answer the second question.
 
-2.Washington State HDMA Data
+#### 2.Washington State HDMA Data
 - *Where did you download the data (e.g., a web URL)?*
 > https://www.kaggle.com/miker400/washington-state-home-mortgage-hdma2016/version/1
 >
@@ -58,7 +58,7 @@ https://www.kaggle.com/lsaa2014/eda-of-ames-house-prices
 - *What questions (from above) can be answered using the data in this dataset?*
 > The dataset provide variety of information about home loans such as demographic information, area specific data, loan status, property type, loan type, loan purpose and originating agency. According to those information we can analysis what is the race, age, income of the people who bought house in Washington state, which can answer question 1 from above
 
-3.House Sales in King County
+#### 3.House Sales in King County
 - *Where did you download the data (e.g., a web URL)?*
 > https://www.kaggle.com/harlfoxem/housesalesprediction
 >
