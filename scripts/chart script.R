@@ -19,4 +19,4 @@ get_chart <- function(dataset) {
 }
 
 
-View(get_chart(dt))
+get_chart(house_sales)
