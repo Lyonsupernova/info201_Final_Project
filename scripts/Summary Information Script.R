@@ -11,7 +11,7 @@ get_summary_info <- function(dataset) {
   ret$cheapest_room <- dataset %>% 
     filter(price == min(price)) %>% 
     select(price)
-  ret$largest_living_room_ft <- dataset %>%
+  ret$largest_houst_ft <- dataset %>%
     filter(sqft_living == max(sqft_living)) %>% 
     select(sqft_living)
   return (ret)
