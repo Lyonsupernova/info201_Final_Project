@@ -35,17 +35,17 @@ Below is a table that summarizes information on average square footage, mean bed
 kable(get_chart(house_sales), col.names = c("Square Footage Range", "Average Square Footage", "Mean Number of Bedrooms","Mean Number of Bathrooms", "Mean Prices"))
 ```
 
-We choose to include this table because we want to exam the relationship between the sizes of the houses and the prices they sold for. On average, the bigger the houses the more expand they are. One **outlier** we found is that the biggest houses(13,000-14,000) sold for a relavent lower price.
+We choose to include this table because we want to exam the relationship between the sizes of the houses and the prices they sold for. On average, the bigger the houses the more expansive they are. One **outlier** we found is that the biggest houses(13,000-14,000sqft) sold for a relavent lower price.
 
 ## Bar Chart for on 2B2B house.
 ***
-Below is a bar chart that shows the relationship between price and floors on 2B2B houses.
+Below is a bar chart that shows the relationship between prices and floors on 2B2B houses.
 
 ```{r plot1, echo=FALSE} 
 get_plot_info(house_sales)
 ```
 
-Bar chart is a useful layout for comparing differences and making labels more legible. Although there are limitation, from the chart, we found that 2B2B houses that have **1.5** floors sold for the **highest** price and **2** floors sould for the **lowest** price.
+Bar chart is a useful layout for comparing differences and making labels more legible. Although there are limitations, from the chart, we found that 2B2B houses that have **1.5** floors sold for the **highest** price and **2** floors sould for the **lowest** price.
 
 
 ## Scatterplot For Relationship of Price and Month Sold
@@ -56,7 +56,7 @@ Below is a scatterplot that shows the relationship of average prices sold and th
 price_month_plot(house_sales)
 ```
 
-Scatter plot is useful for showing how much one variable is affect by another. The relationship between the price and the month shows their correlation. From the plot, we found that selling price **peeked** on April and gradully goes down afterwards. The lowest average price is on Feb. 
+Scatter plot is useful for showing how much one variable is affect by another. The relationship between the price and the month shows their correlation. From the plot, we found that selling price **peeked** on April and gradully went down afterwards. The lowest average price is on Feb. 
 
 
 ## Line Graph For Relationship of Year Built and Prices
@@ -66,4 +66,4 @@ Below is a line graph that shows the relationship of average prices sold and the
 year_price_plot(house_sales)
 ```
 
-Line graphs is useful for compaing changes over some period  of time. One thing we found **surprising** is that houses that were built around 1933 on average sold for the highest price. This could be an ourlier and is worth for future study. Houses that were **newer**(built after 2010) sold for relavent high prices as well, which was expected. 
+Line graphs is useful for compaing changes over some period  of time. One thing we found **surprising** is that houses that were built around 1933 on average sold for the highest price. This could be an ourlier and is worth for future study. Houses that were **newer**(built after 2010) sold for relavent higher prices as well, which was expected. 
