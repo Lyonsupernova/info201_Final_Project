@@ -49,6 +49,7 @@ Bar chart is a useful layout for comparing differences and making labels more le
 
 
 ## Scatterplot For Relationship of Price and Month Sold
+***
 Below is a scatterplot that shows the relationship of average prices sold and the month houses were sold.
 
 ```{r plot2, echo=FALSE} 
@@ -58,7 +59,7 @@ price_month_plot(house_sales)
 Scatter plot is useful for showing how much one variable is affect by another. The relationship between the price and the month shows their correlation. From the plot, we found that selling price **peeked** on April and gradully goes down afterwards. The lowest average price is on Feb. 
 
 
-## Plot 3
+## Line Graph For Relationship of Year Built and Prices
 ***
 Below is a line graph that shows the relationship of average prices sold and the year that houses were sold.
 ```{r plot3, echo=FALSE} 
