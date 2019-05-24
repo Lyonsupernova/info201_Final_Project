@@ -14,7 +14,7 @@ get_chart <- function(dataset) {
     group_by(sqft_range) %>%
     summarize(avg_sqft = format(round(mean(sqft_living), 2), big.mark=","), 
               mean_bd = format(round(mean(bedrooms), 1)),
-              mean_bath = round(mean(bathrooms), 1), 
+              mean_bath = format(round(mean(bathrooms), 1)), 
               mean_price = format(mean(price), big.mark=","))
 }
 
