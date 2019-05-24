@@ -34,6 +34,7 @@ Below is a table that summarizes information on average square footage, mean bed
 ```{r summary_state, echo = FALSE}
 kable(get_chart(house_sales), col.names = c("Square Footage Range", "Average Square Footage", "Mean Number of Bedrooms","Mean Number of Bathrooms", "Mean Prices"))
 ```
+
 We choose to include this table because we want to exam the relationship between the sizes of the houses and the prices they sold for. On average, the bigger the houses the more expand they are. One **outlier** we found is that the biggest houses(13,000-14,000) sold for a relavent lower price.
 
 ## Bar Chart for on 2B2B house.
