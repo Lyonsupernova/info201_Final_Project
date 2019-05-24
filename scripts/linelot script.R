@@ -11,7 +11,7 @@ year_price_plot <- function(dataset) {
     summarise(ave_price = mean(price))
 
   ggplot(year_price, aes(x = yr_built, y = ave_price)) +
-    geom_line() +
+    geom_line(color = "#E69F00") +
     labs(
       title = "Relationship between Built Year and Average Price",
       x = "Built Year",
@@ -19,6 +19,7 @@ year_price_plot <- function(dataset) {
     ) +
     scale_x_continuous(breaks = seq(1900, 2015, by = 10)) +
     scale_y_continuous(labels = scales::comma)
+    
 }
 
 year_price_plot(house_sales)
