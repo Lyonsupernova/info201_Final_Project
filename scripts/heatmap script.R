@@ -11,16 +11,3 @@ base_plot <- qmplot(
   legend = "bottomright"            # location of legend on page
 )
 
-base_plot +
-  geom_polygon(
-    stat = "density2d", # calculate two-dimensional density of points (contours)
-    mapping = aes(fill = stat(level)), # use the computed density to set the fill
-    alpha = .3 # Set the alpha (transparency)
-  ) +
-  scale_fill_gradient2(
-    low = "white",
-    mid = "yellow",
-    high = "red"
-  ) +
-  labs(title="King County House Sale in 2015 HeatMap") +
-  theme(plot.margin = margin(.3, 0, 0, 0, "cm"))

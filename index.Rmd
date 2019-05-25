@@ -10,9 +10,10 @@ chooseCRANmirror(graphics=FALSE, ind=1)
 knitr::opts_chunk$set(echo = TRUE)
 source("scripts/barplot scripts.R")
 source("scripts/Summary Information Script.R")
-source("scripts/scatterplot script.R")
+source("scripts/boxplot.R")
 source("scripts/data table script.R")
 source("scripts/linelot script.R")
+source("scripts/heatmap script.R")
 library("knitr")
 ```
 
@@ -39,7 +40,7 @@ We choose to include this table because we want to exam the relationship between
 
 ## Bar Chart for on 2B2B house.
 ***
-Below is a bar chart that shows the relationship between prices and floors on 2B2B houses.
+Below is a bar chart that shows the relationship between prices and number of floors on 2B2B houses.
 
 ```{r plot1, echo=FALSE} 
 get_plot_info(house_sales)
@@ -48,15 +49,15 @@ get_plot_info(house_sales)
 Bar chart is a useful layout for comparing differences and making labels more legible. Although there are limitations, from the chart, we found that 2B2B houses that have **1.5** floors sold for the **highest** price and **2** floors sould for the **lowest** price.
 
 
-## Scatterplot For Relationship of Price and Month Sold
+## Boxplot For Relationship of Price and Month Sold
 ***
-Below is a scatterplot that shows the relationship of average prices sold and the month houses were sold.
+Below is a boxplot that shows the relationship of average prices sold and the month houses were sold.
 
-```{r plot2, echo=FALSE} 
+```{r plot2, echo=FALSE, warning=FALSE} 
 price_month_plot(house_sales)
 ```
 
-Scatter plot is useful for showing how much one variable is affect by another. The relationship between the price and the month shows their correlation. From the plot, we found that selling price **peeked** on April and gradully went down afterwards. The lowest average price is on Feb. 
+Boxplot is useful for visualising the range and comparing distributions across the monthes. This boxplot shows the shape of the distribution, its central value and variability. We choose to exclude the minumum and maximum prices in each month because they spread really far. From the plot, we found that the median selling price **peeked** on April.The **lowest** median price is on Feb. We also found that all the boxplots are **uneven** in sizes with the upper quartiles further from the central value compares to the lower quartiles. This shows that the prices vary more when they are higher and less when they are lower.  
 
 
 ## Line Graph For Relationship of Year Built and Prices
@@ -67,3 +68,25 @@ year_price_plot(house_sales)
 ```
 
 Line graphs is useful for compaing changes over some period  of time. One thing we found **surprising** is that houses that were built around 1933 on average sold for the highest price. This could be an ourlier and is worth for future study. Houses that were **newer**(built after 2010) sold for relavent higher prices as well, which was expected. 
+
+
+## Heatmap Shows The Number of Sells On A Map
+***
+Below is a heatmap that shows the number of sells in different locations according to the longitude and latitude.
+```{r plot4, echo=FALSE} 
+base_plot +
+  geom_polygon(
+    stat = "density2d", # calculate two-dimensional density of points (contours)
+    mapping = aes(fill = stat(level)), # use the computed density to set the fill
+    alpha = .3 # Set the alpha (transparency)
+  ) +
+  scale_fill_gradient2(
+    low = "white",
+    mid = "yellow",
+    high = "red"
+  ) +
+  labs(title="King County House Sale in 2015 HeatMap") +
+  theme(plot.margin = margin(.3, 0, 0, 0, "cm"))
+```
+
+Heatmap is useful in showing the relative **intensity** of a value within an arrapy. The higher number of sells are "hotter" in red and the lower number of sells are "colder" in yellow. From the map, we see that the North Seattle had **higher** number of sells in King County between May 2014 to May 2015 while south seattle had lower number of sells.
