@@ -8,6 +8,7 @@ output: html_document
 ```{r setup, include = FALSE }
 chooseCRANmirror(graphics=FALSE, ind=1)
 knitr::opts_chunk$set(echo = TRUE)
+house_sales <- read.csv("data/house_sales.csv", stringsAsFactors = FALSE)
 source("scripts/barplot scripts.R")
 source("scripts/Summary Information Script.R")
 source("scripts/boxplot.R")

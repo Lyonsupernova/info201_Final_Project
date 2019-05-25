@@ -2,7 +2,7 @@ library(ggplot2)
 library(dplyr)
 library(tidyr)
 
-house_sales <- read.csv("data/house_sales.csv", stringsAsFactors = FALSE)
+#house_sales <- read.csv("data/house_sales.csv", stringsAsFactors = FALSE)
 
 year_price_plot <- function(dataset) {
   year_price <- dataset %>%
@@ -22,4 +22,4 @@ year_price_plot <- function(dataset) {
     
 }
 
-year_price_plot(house_sales)
+#year_price_plot(house_sales)

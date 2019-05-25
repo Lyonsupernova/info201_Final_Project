@@ -2,7 +2,7 @@ library(ggplot2)
 library(dplyr)
 library(tidyr)
 
-house_sales <- read.csv("data/house_sales.csv", stringsAsFactors = FALSE)
+#house_sales <- read.csv("data/house_sales.csv", stringsAsFactors = FALSE)
 price_month_plot <- function(dataset) {
   relationship_price_month <- dataset %>% 
     mutate(month = substr(date, 5, 6)) %>% 
@@ -18,4 +18,4 @@ price_month_plot <- function(dataset) {
     scale_y_continuous(limits = c(70000,1050000), labels = scales::comma)
 }
 
-price_month_plot(house_sales)
+#price_month_plot(house_sales)

@@ -1,4 +1,4 @@
-house_sales <- read.csv("data/house_sales.csv", stringsAsFactors = FALSE)
+#house_sales <- read.csv("data/house_sales.csv", stringsAsFactors = FALSE)
 
 library(dplyr)
 
@@ -19,4 +19,4 @@ get_chart <- function(dataset) {
 }
 
 
-get_chart(house_sales)
+#get_chart(house_sales)

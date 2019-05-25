@@ -16,4 +16,4 @@ get_summary_info <- function(dataset) {
     select(sqft_living)
   return (ret)
 } 
-get_summary_info(house_sales)
+#get_summary_info(house_sales)
