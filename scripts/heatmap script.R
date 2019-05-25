@@ -1,8 +1,6 @@
 library(ggmap)
 library(ggplot2)
 
-#house_sales <- read.csv("data/house_sales.csv", stringsAsFactors = FALSE)
-
 heat_map <- function(dataset) {
   base_plot <- qmplot(
     data = dataset, # name of the data frame
@@ -28,5 +26,3 @@ heat_map <- function(dataset) {
     labs(title = "King County House Sale in 2015 HeatMap") +
     theme(plot.margin = margin(.3, 0, 0, 0, "cm"))
 }
-
-#heat_map(house_sales)

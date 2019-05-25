@@ -1,6 +1,6 @@
 library(dplyr)
 library(ggplot2)
-#house_sales <- read.csv("data/house_sales.csv", stringsAsFactors = FALSE)
+
 get_plot_info <- function(dataset) {
   twob_twob <- dataset %>%
     filter(bedrooms == 2, bathrooms == 2) %>%
@@ -14,5 +14,3 @@ get_plot_info <- function(dataset) {
       y = "Price"
     ))
 }
-
-#get_plot_info(house_sales)

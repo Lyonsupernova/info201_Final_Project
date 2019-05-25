@@ -1,5 +1,3 @@
-#house_sales <- read.csv("data/house_sales.csv", stringsAsFactors = FALSE)
-
 library(dplyr)
 
 # finds average square footage, bedroom, bath,
@@ -27,6 +25,3 @@ get_chart <- function(dataset) {
       mean_price = format(mean(price), big.mark = ",")
     )
 }
-
-
-#get_chart(house_sales)

@@ -1,6 +1,8 @@
-# info 201 Final Project Brainstorm
+# info 201 Final
 
 ## Topic: _**Housing**_
+
+## Midpoint Deliverable" _*https://lyonsupernova.github.io/info201_Final_Project/*_
 
 -------------
 ### Summary
