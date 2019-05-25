@@ -19,7 +19,6 @@ year_price_plot <- function(dataset) {
     ) +
     scale_x_continuous(breaks = seq(1900, 2015, by = 10)) +
     scale_y_continuous(labels = scales::comma)
-    
 }
 
 #year_price_plot(house_sales)

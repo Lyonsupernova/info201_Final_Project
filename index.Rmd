@@ -13,7 +13,7 @@ source("scripts/barplot scripts.R")
 source("scripts/Summary Information Script.R")
 source("scripts/boxplot.R")
 source("scripts/data table script.R")
-source("scripts/linelot script.R")
+source("scripts/lineplot script.R")
 source("scripts/heatmap script.R")
 library("knitr")
 ```
@@ -74,20 +74,8 @@ Line graphs is useful for compaing changes over some period  of time. One thing 
 ## Heatmap Shows The Number of Sells On A Map
 ***
 Below is a heatmap that shows the number of sells in different locations according to the longitude and latitude.
-```{r plot4, echo=FALSE} 
-base_plot +
-  geom_polygon(
-    stat = "density2d", # calculate two-dimensional density of points (contours)
-    mapping = aes(fill = stat(level)), # use the computed density to set the fill
-    alpha = .3 # Set the alpha (transparency)
-  ) +
-  scale_fill_gradient2(
-    low = "white",
-    mid = "yellow",
-    high = "red"
-  ) +
-  labs(title="King County House Sale in 2015 HeatMap") +
-  theme(plot.margin = margin(.3, 0, 0, 0, "cm"))
+```{r plot4, echo=FALSE, message=FALSE} 
+heat_map(house_sales)
 ```
 
 Heatmap is useful in showing the relative **intensity** of a value within an arrapy. The higher number of sells are "hotter" in red and the lower number of sells are "colder" in yellow. From the map, we see that the North Seattle had **higher** number of sells in King County between May 2014 to May 2015 while south seattle had lower number of sells.
