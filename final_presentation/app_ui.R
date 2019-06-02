@@ -35,7 +35,32 @@ page_one <- tabPanel(
     )
   )
 )
+
+house_sales_small <- house_sales %>% 
+  arrange(bedrooms) %>%
+  filter(bedrooms < 2)
+col_names2 <- colnames(house_sales_small)
+x_input <- selectInput(
+  inputId = "x_input",
+  label = "select for x",
+  choices = col_names2[c(6,7,12,15,20,21)]
+)
+
+page_two <- tabPanel(
+  "Second Page",
+  titlePanel("Scatter for all sales"),
+  sidebarLayout(
+    sidebarPanel(
+      x_input  
+    ),
+    mainPanel(
+      plotOutput("scatter")
+    )
+  )
+)
+
 ui <- navbarPage(
   "House Selection",
-  page_one
+  page_one,
+  page_two
 )
