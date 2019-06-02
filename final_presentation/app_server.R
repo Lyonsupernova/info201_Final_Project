@@ -1,18 +1,25 @@
 library(dplyr)
 library(ggplot2)
 library(shiny)
-
+View(midwest)
 server <- function(input, output) {
-  output$comparison <- renderplot({
+  bathroom_pref <- reactive({
+    house_preference %>% 
+      filter(bedrooms == input$bedroom)
+  })
+  output$bedroom <- renderPlot({
     title <- paste0(
-      "The comparison between two house selections: ",
-      input$bedroom1, "bedrooom", input$bathroom1, "bathroom v.s.")
-    p <- ggplot(house_preference) +
+      "The bathroom selections with price/sqft: ",
+      input$bedroom, "bedrooom")
+    p <- ggplot(bathroom_pref()) +
       geom_point(mapping = aes_string(
-        x = ,
-        y = price_per_square, color = 
+        x = "bathrooms",
+        y = "price_per_square",
+        size = "n",
+        color = "price_per_square"
       )) +
-      labs(x = input$x_var, y = input$y_var, title = title)
+      labs(x = paste0(input$bedroom, " bedroom"),
+           y = "dollars / sqft", title = title)
     p
   })
 }
