@@ -10,12 +10,8 @@ house_preference <- house_sales %>%
   head(n = 30)
 unique_bedrooms <- sort(unique(house_preference$bedrooms))
 unique_bathrooms <- sort(unique(house_preference$bathrooms))
-bedroom_select<- selectInput(
-  "bedroom",
-  label = "The frist bedroom selected ",
-  choices = unique_bedrooms,
-  selected = 2
-) 
+
+
 page_one <- tabPanel(
   "First Page",
   titlePanel("Bedroom Selection"),
@@ -26,7 +22,12 @@ page_one <- tabPanel(
      number!"),
   sidebarLayout(
     sidebarPanel(
-      bedroom_select,
+      selectInput(
+        "bedroom",
+        label = "The frist bedroom selected ",
+        choices = unique_bedrooms,
+        selected = 2
+      ) ,
       helpText("Note: dollars / sqft we used the price to divide with the 
                living area of house.")
       ),
