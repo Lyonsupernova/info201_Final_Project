@@ -4,7 +4,6 @@ library(shiny)
 library(dplyr)
 library(bit64)
 library(leaflet)
-
 server <- function(input, output) {
   bathroom_pref <- reactive({
     house_preference %>% 
@@ -13,7 +12,7 @@ server <- function(input, output) {
   output$bedroom <- renderPlot({
     title <- paste0(
       "The bathroom selections with price/sqft: ",
-      input$bedroom, "bedrooom")
+      input$bedroom, " bedrooom")
     p <- ggplot(bathroom_pref()) +
       geom_point(mapping = aes_string(
         x = "bathrooms",
@@ -71,7 +70,8 @@ server <- function(input, output) {
                , lat = 47.620422
                , zoom = 13 ) %>% 
       addCircles(lng = ~long, lat = ~lat,weight = 8, radius = radius,
-                 fillOpacity = 0.5, stroke = FALSE,fillColor=pal(colorData),layerId = ~id,
+                 fillOpacity = 0.5, stroke = FALSE,fillColor=pal(colorData),
+                 layerId = ~id,
                  popup = paste(
                    sprintf("Rating Score: %d", as.integer(house_sales$grade)), tags$br(),
                    sprintf("Sale Price: $%s", house_sales$price), tags$br(),
@@ -82,11 +82,4 @@ server <- function(input, output) {
       )  
       )
   })
-
-  
-    
-  
-  
-  
-  
 }

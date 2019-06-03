@@ -60,7 +60,6 @@ page_two <- tabPanel(
     )
   )
 )
-
 page_3 <- tabPanel(
   title = "Seattle's Map", 
   div(class="outer",tags$head(includeCSS("style.css")),
@@ -68,7 +67,6 @@ page_3 <- tabPanel(
     absolutePanel(id = "controls", class = "panel panel-default", fixed = TRUE,
                   draggable = FALSE, top = 60, left = "auto", right = 20, 
                   bottom = "auto", width = "auto", height = "auto",
-                
                   h3("Seattle Housing Sale History"),
                   p("Click on each data point to see more info"),
                   selectInput("color", "Color", c("Price" = "price",
