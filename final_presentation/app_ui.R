@@ -16,7 +16,7 @@ unique_bathrooms <- sort(unique(house_preference$bathrooms))
 
 
 page_one <- tabPanel(
-  "First Page",
+  "Bedroom Selection",
   titlePanel("Bedroom Selection"),
   h5("Do you know how many bathrooms would be the best choice for you to 
      select which types of house style you prefer. In the below select
