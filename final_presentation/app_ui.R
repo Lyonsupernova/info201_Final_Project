@@ -4,6 +4,8 @@ library(shinyWidgets)
 library(shinythemes)
 library(leaflet)
 house_sales <- read.csv("data/house_sales.csv", stringsAsFactors = FALSE)
+# The page one's house preference depends on the frequency of bedroom bathroom
+# combination. The most popular 30 bathroom bedroom combinations.
 house_preference <- house_sales %>% 
   mutate(price_per_square = price / sqft_living) %>% 
   group_by(bedrooms, bathrooms) %>% 
@@ -13,8 +15,6 @@ house_preference <- house_sales %>%
   head(n = 30)
 unique_bedrooms <- sort(unique(house_preference$bedrooms))
 unique_bathrooms <- sort(unique(house_preference$bathrooms))
-
-
 page_one <- tabPanel(
   "Bedroom Selection",
   titlePanel("Bedroom Selection"),
@@ -39,7 +39,6 @@ page_one <- tabPanel(
     )
   )
 )
-
 house_sales_small <- house_sales %>% 
   arrange(bedrooms) %>%
   filter(bedrooms < 2)
@@ -49,7 +48,6 @@ x_input <- selectInput(
   label = "select for x",
   choices = col_names2[c(6,7,12,15,20,21)]
 )
-
 page_two <- tabPanel(
   "Second Page",
   titlePanel("Scatter for all sales"),
@@ -80,7 +78,6 @@ page_3 <- tabPanel(
     )
   )
 )
-
 ui <- navbarPage(
   theme = shinytheme("flatly"),
   "House Selection",

@@ -18,15 +18,13 @@ server <- function(input, output) {
       geom_point(mapping = aes_string(
         x = "bathrooms",
         y = "price_per_square",
-        size = "n",
+        size = "bathrooms",
         color = "price_per_square"
       )) +
       labs(x = paste0(input$bedroom, " bedroom"),
            y = "dollars / sqft", title = title)
     p
   })
-  
-  
   output$scatter <- renderPlot({
     scatterP <- ggplot(house_sales_small, aes(
       x = house_sales_small[[input$x_input]],
@@ -43,25 +41,17 @@ server <- function(input, output) {
            caption = "Source: House Sales King County")
     return(scatterP)
   })
-  
-  
   house_df <- data.table::fread("data/house_sales.csv", stringsAsFactors = FALSE)
   house_data <- reactive({house_df})
-  
   output$map <- renderLeaflet({
     df <- house_data()
-
-    
     if(input$color == "condition"){
       colorData <- df[[input$color]]
       pal <- colorFactor(c('#fb8072','#ffffb3','#bebada','#8dd3c7','#80b1d3'), colorData)
     }else{
-      
       colorData <- df[[input$color]]
       pal <- colorBin("RdYlBu", colorData, 4, pretty = FALSE)
     }
-    
-    
     if(input$size == "none"){
       radius <- 25
     }else{
@@ -72,7 +62,6 @@ server <- function(input, output) {
         radius <- df[[input$size]] * 10
       }
     }
-    
     leaflet(data = df) %>%
       addTiles( # Add default OpenStreetMap map tiles
         urlTemplate = "https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png'",
@@ -91,7 +80,6 @@ server <- function(input, output) {
                    sprintf("Build Year: %s", house_sales$yr_built), tags$br(),
                    sprintf("Area: %d sqft", house_sales$sqft_living), tags$br()
       )  
-                   
       )
   })
 
