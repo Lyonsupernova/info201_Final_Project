@@ -1,5 +1,8 @@
 library(dplyr)
 library(shiny)
+library(shinyWidgets)
+library(shinythemes)
+library(leaflet)
 house_sales <- read.csv("data/house_sales.csv", stringsAsFactors = FALSE)
 house_preference <- house_sales %>% 
   mutate(price_per_square = price / sqft_living) %>% 
@@ -60,8 +63,28 @@ page_two <- tabPanel(
   )
 )
 
+page_3 <- tabPanel(
+  title = "Seattle's Map", 
+  div(class="outer",tags$head(includeCSS("style.css")),
+    leafletOutput("map", width = "100%", height = "100%"),
+    absolutePanel(id = "controls", class = "panel panel-default", fixed = TRUE,
+                  draggable = FALSE, top = 60, left = "auto", right = 20, 
+                  bottom = "auto", width = "auto", height = "auto",
+                
+                  h3("Seattle Housing Sale History"),
+                  p("Click on each data point to see more info"),
+                  selectInput("color", "Color", c("Price" = "price",
+                                                  "Condition" = "condition")),
+                  selectInput("size", "Size", c("Don't show size" = "none",
+                              "Area" = "sqft_living", "Rating" = "grade"))
+    )
+  )
+)
+
 ui <- navbarPage(
+  theme = shinytheme("flatly"),
   "House Selection",
   page_one,
-  page_two
+  page_two,
+  page_3
 )
