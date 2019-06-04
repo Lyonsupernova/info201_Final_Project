@@ -29,24 +29,25 @@ server <- function(input, output) {
                  , title = title)
   })
 
-  
-
-  output$scatter <- renderPlot({
-    scatterP <- ggplot(house_sales_small, aes(
-      x = house_sales_small[[input$x_input]],
-      y = price
-    )) +
-      geom_point(aes(
-        col = bedrooms
-      )) +
-      geom_smooth(method = "loess", se = F) +
-      labs(subtitle =  paste(input$x_input, "Vs", "price"),
-           y = "price",
-           x = input$x_input,
-           title = "Scatterplot",
-           caption = "Source: House Sales King County")
-    return(scatterP)
+  house_price_month_1 <- reactive({
+    house_price_month %>% 
+      filter(condition == input$conditions_input) %>% 
+      filter(bedrooms == input$bedrooms_input)
   })
+  output$boxp <- renderPlot({
+    boxp <- ggplot(house_price_month_1(), aes(x = months, y = price)) +
+      geom_boxplot(outlier.shape = NA, aes(fill = months)) +
+      labs(
+        title = paste("Relationship of price and month for ", input$bedrooms_input,
+                      " bedrooms houses in condition ",
+                      input$conditions_input, " ."),
+        x = "Months",
+        y = "Price"
+      ) +
+      scale_y_continuous(limits = input$limit_input, labels = scales::comma)
+    return(boxp)
+  })
+  
   house_df <- data.table::fread("data/house_sales.csv", stringsAsFactors = FALSE)
   house_data <- reactive({house_df})
   output$map <- renderLeaflet({

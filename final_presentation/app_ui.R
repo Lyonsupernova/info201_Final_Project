@@ -87,27 +87,52 @@ page_one <- tabPanel(
     )
   )
 )
-house_sales_small <- house_sales %>% 
-  arrange(bedrooms) %>%
-  filter(bedrooms < 2)
-col_names2 <- colnames(house_sales_small)
-x_input <- selectInput(
-  inputId = "x_input",
-  label = "select for x",
-  choices = col_names2[c(6,7,12,15,20,21)]
+house_price_month <- house_sales %>%
+  mutate(month = substr(date, 5, 6)) %>%
+  mutate(months = as.factor(month)) 
+unique_conditions <- sort(unique(house_price_month$condition))
+unique_bedrooms <- sort(unique(house_price_month$bedrooms))
+conditions_input <- selectInput(
+  "conditions_input",
+  label = "What is the condition for the house? ",
+  choices = unique_conditions,
+  selected = 3
+)
+bedrooms_input <- selectInput(
+  "bedrooms_input",
+  label = "How many bathrooms are in the house? ",
+  choices = unique_bedrooms,
+  selected = 3
+)
+limit_input <- sliderInput(
+  inputId = "limit_input",
+  label = "Price Range",
+  max = 1050000,
+  min = 70000,
+  value = c(70000, 1050000)
 )
 page_two <- tabPanel(
-  "Second Page",
-  titlePanel("Scatter for all sales"),
+  "Best Month",
+  titlePanel("What is the relationship between month sold and price 
+              when condition and bathrooms are the same?"),
+  h5("Do you know selling prices vary by months?  
+      Do you know when will the best month to buy or sell a house? 
+      Below is a box plot that shows the price differences by month.
+      Please feel free to choose the condition of the house, the number
+      of bedrooms and the price range for houses.
+     "),
   sidebarLayout(
     sidebarPanel(
-      x_input  
+      conditions_input,
+      bedrooms_input,
+      limit_input
     ),
     mainPanel(
-      plotOutput("scatter")
+      plotOutput("boxp")
     )
   )
 )
+
 page_three <- tabPanel(
   title = "Seattle's Map", 
   div(class="outer",tags$head(includeCSS("style.css")),
