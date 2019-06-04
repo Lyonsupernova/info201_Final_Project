@@ -127,5 +127,5 @@ ui <- navbarPage(
   home_page,
   page_one,
   page_two,
-  page_3
+  page_three
 )
