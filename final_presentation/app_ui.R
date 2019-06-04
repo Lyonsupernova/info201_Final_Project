@@ -113,10 +113,10 @@ limit_input <- sliderInput(
 )
 page_two <- tabPanel(
   "Best Month",
-  titlePanel("What is the relationship between month sold and price 
-              when condition and bathrooms are the same?"),
+  titlePanel("Relationship between month sold and price 
+              when conditions and bathrooms are the same"),
   h5("Do you know selling prices vary by months?  
-      Do you know when will the best month to buy or sell a house? 
+      Do you know when will be the best month to buy or sell a house? 
       Below is a box plot that shows the price differences by month.
       Please feel free to choose the condition of the house, the number
       of bedrooms and the price range for houses.
