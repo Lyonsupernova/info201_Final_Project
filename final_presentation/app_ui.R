@@ -46,11 +46,11 @@ public record."),
   tags$h3("Contact Us"),
   p("W'd love to hear from you. Whether you thave a question about feature, 
     price, or anything else, our team is ready to answer all your questions!"),
-  p("George Ma: zma9977@uw.edu "),
-  p("lyons Lu: lyons2000124@outlook.com"),
-  p("Mengru Zhou: vickyzhou9119@outlook.com"),
-  p("Lufei Wang: lufeiw@uw.edu"),
-  p("Amara Perry:amaraperry9@gmail.com")
+  p("Amara Perry: ", a("amaraperry9@gmail.com", href = "mailto:amaraperry9@gmail.com")),
+  p("George Ma: ", a("zma9977@uw.edu", href = "mailto:zma9977@uw.edu")),
+  p("Lufei Wang: ", a("lufeiw@uw.edu", href = "mailto:lufeiw@uw.edu")),
+  p("Lyons Lu: ", a("lyons2000124@outlook.com", href = "mailto:lyons2000124@outlook.com")),
+  p("Mengru Zhou: ", a("vickyzhou9119@outlook.com", href = "mailto:vickyzhou9119@outlook.com"))
 )
 
 page_one <- tabPanel(
