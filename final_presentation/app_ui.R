@@ -10,6 +10,9 @@ house_sales <- read.csv("data/house_sales.csv", stringsAsFactors = FALSE)
 
 home_page <- tabPanel(
   "Home", 
+  fluidRow(
+    column(width = 12, img(src="banner.jpg", style = "display: block; margin-left: auto; margin-right: auto; width: 100%;"))
+  ),
   tags$h3("Welcome"),
   p("Wecome! We are thrilled to have you with us! At this page, we will guide 
     you through to explore our webiste. We are an independent, non-commercial 
@@ -105,7 +108,7 @@ page_two <- tabPanel(
     )
   )
 )
-page_3 <- tabPanel(
+page_three <- tabPanel(
   title = "Seattle's Map", 
   div(class="outer",tags$head(includeCSS("style.css")),
     leafletOutput("map", width = "100%", height = "100%"),
