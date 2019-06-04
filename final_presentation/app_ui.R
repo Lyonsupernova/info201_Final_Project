@@ -162,6 +162,6 @@ ui <- navbarPage(
   page_three,
   br(),
   hr(),
-  p("INFO 201 | Spring 2019 | George Ma, Lufei Wang, Mengru Zhou, Amara Perry, Lyons lu", align = "center"),
+  p("INFO 201 | Spring 2019 | Amara Perry, George Ma, Lufei Wang, Lyons Lu, Mengru Zhou", align = "center"),
   p("Link to ", a("GitHub Repository", href = "https://github.com/Lyonsupernova/info201_Final_Project"), align = "center")
 )
