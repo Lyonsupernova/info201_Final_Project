@@ -9,24 +9,26 @@ server <- function(input, output) {
   bathroom_pref <- reactive({
     house_preference %>% 
       filter(bedrooms == input$bedroom) %>% 
-      mutate(pps = paste0("$", price_per_square)) 
+      mutate(pps = paste0("$", price_per_square)) %>% 
+      mutate(num_bathroom = paste(bathrooms,"bathrooms"))
   })
   output$bathroom <- renderPlotly({
     title <- paste0(
       "The bathroom selections with price/sqft: ",
       input$bedroom, " bedrooom")
     x <- list(
-      title = paste0(input$bedroom, " bathroom")
+      title = "Number of Bathrooms"
     )
     y <- list(
-      title = "dollars / sqft"
+      title = "Dollars / Sqft"
     )
-      plot_ly(bathroom_pref(), x = ~bathrooms, y = ~pps,
+      plot_ly(bathroom_pref(), x = ~num_bathroom, y = ~pps,
               type = "scatter", mode = "markers",
               color = ~price_per_square) %>% 
         layout(xaxis = x, yaxis = y
                  , title = title)
   })
+
   
 
   output$scatter <- renderPlot({
