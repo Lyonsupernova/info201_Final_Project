@@ -15,7 +15,7 @@ server <- function(input, output) {
       "The bathroom selections with price/sqft: ",
       input$bedroom, " bedrooom")
     x <- list(
-      title = paste0(input$bedroom, " bedroom")
+      title = paste0(input$bedroom, " bathroom")
     )
     y <- list(
       title = "dollars / sqft"
