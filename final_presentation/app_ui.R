@@ -3,6 +3,7 @@ library(shiny)
 library(shinyWidgets)
 library(shinythemes)
 library(leaflet)
+library(plotly)
 house_sales <- read.csv("data/house_sales.csv", stringsAsFactors = FALSE)
 # The page one's house preference depends on the frequency of bedroom bathroom
 # combination. The most popular 30 bathroom bedroom combinations.
@@ -27,7 +28,7 @@ page_one <- tabPanel(
     sidebarPanel(
       selectInput(
         "bedroom",
-        label = "The frist bedroom selected ",
+        label = "How many bedroom do you want to select ",
         choices = unique_bedrooms,
         selected = 2
       ) ,
@@ -35,7 +36,7 @@ page_one <- tabPanel(
                living area of house.")
       ),
     mainPanel(
-      plotOutput("bedroom")
+      plotlyOutput("bathroom")
     )
   )
 )
