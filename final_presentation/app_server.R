@@ -38,7 +38,7 @@ server <- function(input, output) {
     boxp <- ggplot(house_price_month_1(), aes(x = months, y = price)) +
       geom_boxplot(outlier.shape = NA, aes(fill = months)) +
       labs(
-        title = paste("Relationship of price and month for ", input$bedrooms_input,
+        title = paste0("Relationship of price and month for ", input$bedrooms_input,
                       " bedrooms houses in condition ",
                       input$conditions_input, " ."),
         x = "Months",
