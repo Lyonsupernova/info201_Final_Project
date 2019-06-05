@@ -10,12 +10,12 @@ server <- function(input, output) {
     house_preference %>% 
       filter(bedrooms == input$bedroom) %>% 
       mutate(pps = paste0("$", price_per_square)) %>% 
-      mutate(num_bathroom = paste(bathrooms,"bathrooms"))
+      mutate(num_bathroom = paste(bathrooms,"bathroom(s)"))
   })
   output$bathroom <- renderPlotly({
     title <- paste0(
-      "The bathroom selections with price/sqft: ",
-      input$bedroom, " bedrooom")
+      "The bathroom selection(s) with price/sqft: ",
+      input$bedroom, " bedroom")
     x <- list(
       title = "Number of Bathrooms"
     )
