@@ -2,6 +2,8 @@
 
 ## Topic: _**Housing**_
 
+## Final presentation: _*https://george9977.shinyapps.io/info201_final_presentation/*_
+
 ## Midpoint Deliverable" _*https://lyonsupernova.github.io/info201_Final_Project/*_
 
 -------------
